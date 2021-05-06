@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import styled from "styled-components";
+import NavBar from "./components/navBar";
+import Search from "./components/search";
 
-function App() {
+export default function App() {
+  const theme = {
+    green: "#008060",
+    cream: "#FFFBBD",
+    fawn: "#E6AA68",
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AppStyle>
+      <NavBar theme={theme} />
+      <Search theme={theme} />
+    </AppStyle>
   );
 }
 
-export default App;
+const AppStyle = styled.div`
+  body {
+    font-family: "Raleway", "Helvetica Neue", Arial, sans-serif;
+    font-size: 1em;
+    line-height: 1.5;
+    font-weight: 400;
+    box-sizing: border-box;
+  }
+`;
